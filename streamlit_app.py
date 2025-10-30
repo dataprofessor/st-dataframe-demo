@@ -11,13 +11,14 @@ def load_data():
     df['images'] = IMAGE_BASE_URL + df['id'] + '.png'
     return df
 
+# Display the URL as an image
 column_config = {
-    "images": st.column_config.ImageColumn("Image", width="medium"), # Display the full URL as an image
+    "images": st.column_config.ImageColumn("Image", width="medium"),
     "Image": None
 }
 
+# Display the dataframe
 data = load_data()
-
 st.dataframe(
         data,
         column_config=column_config,
