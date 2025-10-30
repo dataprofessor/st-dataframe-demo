@@ -10,7 +10,7 @@ st.write("Displaying bear data from a CSV, now with images! 🐻🖼️")
 IMAGE_BASE_URL = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/images/"
 
 # Load data from the provided URL
-@st.cache_data
+# Removed @st.cache_data to clear any potential caching issues
 def load_data():
     url = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/bear_data.csv"
     df = pd.read_csv(url)
