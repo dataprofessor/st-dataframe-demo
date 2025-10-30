@@ -17,7 +17,7 @@ def load_data():
     
     # Create a new column with the full, absolute image URL
     # The original filename is in the 'Image' column
-    df['images'] = IMAGE_BASE_URL + df['id'] + 'png'
+    df['images'] = IMAGE_BASE_URL + df['id'] + '.png'
     return df
 
 data = load_data()
