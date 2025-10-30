@@ -14,6 +14,10 @@ IMAGE_BASE_URL = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/r
 def load_data():
     url = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/bear_data.csv"
     df = pd.read_csv(url)
+    
+    # Fix for KeyError: Strip any hidden whitespace from column names
+    df.columns = df.columns.str.strip()
+    
     # Create a new column with the full, absolute image URL
     # The original filename is in the 'Image' column
     df['full_image_url'] = IMAGE_BASE_URL + df['Image']
