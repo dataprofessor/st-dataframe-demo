@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# Use wide layout for better image display
-st.set_page_config(layout="wide")
-
 # Load data from provided URL
 def load_data():
     df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/bear_data.csv")
