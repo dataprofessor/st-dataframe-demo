@@ -21,6 +21,7 @@ column_config = {
 }
 
 # Display the dataframe
+st.title("🐻 Bear Data Set")
 data = load_data()
 st.dataframe(
         data,
