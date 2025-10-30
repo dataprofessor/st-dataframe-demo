@@ -4,8 +4,6 @@ import pandas as pd
 # Use wide layout for better image display
 st.set_page_config(layout="wide")
 
-st.write("Displaying bear data from a CSV, now with images! 🐻🖼️")
-
 # Base URL for the images
 IMAGE_BASE_URL = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/images/"
 
@@ -23,7 +21,7 @@ def load_data():
     return df
 
 data = load_data()
-
+st.dataframe(data)
 # # Configure the 'full_image_url' column to be displayed as an image
 # # and hide the original 'Image' column (which just has the filename)
 # column_config = {
