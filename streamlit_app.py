@@ -15,16 +15,17 @@ def load_data():
     url = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/bear_data.csv"
     df = pd.read_csv(url)
     # Create a new column with the full, absolute image URL
-    df['Image'] = IMAGE_BASE_URL + df['Image URL']
+    # The original filename is in the 'Image' column
+    df['full_image_url'] = IMAGE_BASE_URL + df['Image']
     return df
 
 data = load_data()
 
-# Configure the 'Image' column to be displayed as an image
-# and hide the original 'Image URL' column
+# Configure the 'full_image_url' column to be displayed as an image
+# and hide the original 'Image' column (which just has the filename)
 column_config = {
-    "Image": st.column_config.ImageColumn(width="medium"),
-    "Image URL": None 
+    "full_image_url": st.column_config.ImageColumn("Image", width="medium"), # Display the full URL as an image
+    "Image": None # Hide the original column with just the filename
 }
 
 # Display the data with an editing toggle
