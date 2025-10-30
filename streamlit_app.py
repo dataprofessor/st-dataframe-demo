@@ -26,6 +26,6 @@ data = load_data()
 st.dataframe(
         data,
         column_config=column_config,
-        use_container_width=True,
+        width="content",
         hide_index=True,
     )
