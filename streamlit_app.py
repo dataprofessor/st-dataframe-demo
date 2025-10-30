@@ -13,7 +13,7 @@ def load_data():
 
 # Display the URL as an image
 column_config = {
-    "images": st.column_config.ImageColumn("Image", width="medium"),
+    "images": st.column_config.ImageColumn("Image", width="large"),
     "Image": None
 }
 
