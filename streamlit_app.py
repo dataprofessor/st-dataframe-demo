@@ -15,11 +15,11 @@ def load_data():
     url = "https://raw.githubusercontent.com/dataprofessor/bear-dataset/refs/heads/master/bear_data.csv"
     df = pd.read_csv(url)
     
-    df.columns = df.columns.str.strip()
+    # df.columns = df.columns.str.strip()
     
     # Create a new column with the full, absolute image URL
     # The original filename is in the 'Image' column
-    df['full_image_url'] = IMAGE_BASE_URL + df['Image']
+    # df['full_image_url'] = IMAGE_BASE_URL + df['Image']
     return df
 
 data = load_data()
